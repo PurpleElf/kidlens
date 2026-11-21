@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>相册 · KidLens AI</title>
+<link rel="stylesheet" href="css/style.css?v=20261121c">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="20" rx="6" fill="currentColor" opacity=".15"/><path d="M11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/></svg>
+      </span>
+      <span>KidLens <b>AI</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="gallery.html" class="current">相册</a>
+      <a href="import.html">导入素材</a>
+      <a href="review.html">审核台</a>
+    </nav>
+    <div class="nav-user" id="navUser"></div>
+  </div>
+</header>
+
+<main class="wrap app-main">
+  <div class="gallery-head">
+    <div class="sec-head app-head">
+      <span class="kicker">GALLERY</span>
+      <h2>按孩子，按日期翻看</h2>
+      <p>每个孩子一个文件夹，素材按活动日期分组。点击任意一张看大图。</p>
+    </div>
+    <div class="head-actions">
+      <a class="btn" href="import.html">+ 导入素材</a>
+      <button class="btn btn-ghost" id="backupBtn" type="button">备份相册</button>
+    </div>
+  </div>
+
+  <div class="gallery-grid">
+    <aside class="panel people-panel">
+      <div class="panel-title">孩子们</div>
+      <div class="panel-body">
+        <div id="peopleList" class="people-list"></div>
+        <button class="btn btn-ghost btn-mini" id="showPending" hidden>待确认 <span id="pendingBadge">0</span></button>
+      </div>
+    </aside>
+
+    <section class="gallery-content" id="galleryContent">
+      <div class="gallery-empty" id="galleryEmpty">
+        <div class="empty-ico">📷</div>
+        <b>还没有归档的素材</b>
+        <p>先导入一批班级照片或视频，AI 分拣后就能在这里按孩子、按日期翻看了。</p>
+        <a class="btn" href="import.html">去导入素材 →</a>
+      </div>
+      <div id="dateGroups"></div>
+    </section>
+  </div>
+</main>
+
+<!-- 大图灯箱 -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="关闭">×</button>
+  <div class="lightbox-stage" id="lightboxStage"></div>
+  <div class="lightbox-meta" id="lightboxMeta"></div>
+  <div class="lightbox-actions" id="lightboxActions"></div>
+</div>
+
+<script src="js/app.js?v=20261121c"></script>
+</body>
+</html>

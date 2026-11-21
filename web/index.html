@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="KidLens AI — 本地运行的儿童影像分拣与成长手账助手，让每一个成长瞬间都被好好收藏。">
+<title>KidLens AI · 把杂乱影像，变成孩子的成长故事</title>
+<link rel="stylesheet" href="css/style.css?v=20261121c">
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="20" rx="6" fill="currentColor" opacity=".15"/><path d="M11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/></svg>
+      </span>
+      <span>KidLens <b>AI</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="gallery.html">相册</a>
+      <a href="import.html">导入素材</a>
+      <a href="#how">如何工作</a>
+      <a href="#showcase">作品展示</a>
+    </nav>
+    <div class="nav-user" id="navUser"></div>
+    <a class="btn btn-sm" href="gallery.html">打开相册 <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> 本地运行 · 数据不出设备</div>
+      <h1>把杂乱的影像，<br>变成孩子的<span class="grad">成长故事</span></h1>
+      <p class="lede">一堆视频里翻找孩子的可爱瞬间太费劲？KidLens 在你自己的电脑上用 AI 认出孩子的脸，自动挑出属于 TA 的片段，剪成高光集锦，写成成长手账。</p>
+      <div class="cta-row">
+        <a class="btn" href="import.html">导入班级素材 <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="gallery.html">打开相册</a>
+      </div>
+      <ul class="feature-chips">
+        <li><span aria-hidden="true">🏠</span> 100% 本地</li>
+        <li><span aria-hidden="true">💰</span> 零硬件成本</li>
+        <li><span aria-hidden="true">🔒</span> 隐私优先</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <video id="heroVideo" class="phone-screen" muted loop playsinline preload="metadata"
+               poster="../data/faces/xb1.JPG">
+          <source src="../data/output/小宝_高光集锦.mp4" type="video/mp4">
+        </video>
+        <button class="play-badge" id="heroPlay" aria-label="播放集锦">▶</button>
+      </div>
+      <div class="float-card float-a">
+        <span class="float-ico">😊</span>
+        <div><b>识别成功</b><small>小宝 · 相似度 0.98</small></div>
+      </div>
+      <div class="float-card float-b">
+        <span class="float-ico">🎬</span>
+        <div><b>生成集锦</b><small>1 段 · 10 秒</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 五步漏斗 ===== -->
+<section id="how" class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">HOW IT WORKS</span>
+      <h2>从一堆视频，到一个故事</h2>
+      <p>五步流水线，越往后素材越少、越珍贵。AI 只做粗活，最后一道关留给人。</p>
+    </div>
+    <div class="funnel">
+      <div class="step"><div class="step-num">01</div><div class="step-ico">👤</div><h3>建立人物库</h3><p>几张正脸照建档，提取 512 维人脸特征，越用越准。</p></div>
+      <div class="step"><div class="step-num">02</div><div class="step-ico">📥</div><h3>素材入库</h3><p>视频丢进收件箱，MD5 分块去重，自动归档。</p></div>
+      <div class="step"><div class="step-num">03</div><div class="step-ico">🔍</div><h3>人脸分拣</h3><p>逐帧检测、相似度比对，命中合并成专属片段。</p></div>
+      <div class="step"><div class="step-num">04</div><div class="step-ico">✂️</div><h3>生成集锦</h3><p>切片、扩边、拼接，导出每个人的高光时刻。</p></div>
+      <div class="step"><div class="step-num">05</div><div class="step-ico">📖</div><h3>成长手账</h3><p>人工审核兜底，图文周报记录成长轨迹。</p></div>
+    </div>
+    <div class="funnel-note"><span class="pill pill-auto">机器自动 · 大量进</span><span class="arrow-long">→→→</span><span class="pill pill-human">人工确认 · 精选出</span></div>
+  </div>
+</section>
+
+<!-- ===== 作品展示 ===== -->
+<section id="showcase" class="section section-tint">
+  <div class="wrap showcase-grid">
+    <div class="showcase-copy">
+      <span class="kicker">SHOWCASE</span>
+      <h2>这是小宝的<br>一段真实高光</h2>
+      <p>下面这段集锦，是系统从原始视频里自动识别、切片、拼接出来的——没有手动剪辑。</p>
+      <div class="stat-row">
+        <div class="stat"><b>0.98</b><span>最高相似度</span></div>
+        <div class="stat"><b>5/5</b><span>检测命中</span></div>
+        <div class="stat"><b>9.7s</b><span>集锦时长</span></div>
+      </div>
+      <p class="mini-note">💡 Video 里出现抖音界面是因为用了手机录屏做验证；换成原始视频，画质与识别率会更好。</p>
+    </div>
+    <div class="showcase-player">
+      <video id="mainVideo" controls playsinline preload="metadata" poster="../data/faces/xb1.JPG">
+        <source src="../data/output/小宝_高光集锦.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <div class="player-caption"><span class="rec-dot"></span> 小宝 · 专属集锦 · 自动生成</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 成长手账时间轴 ===== -->
+<section id="timeline" class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">GROWTH JOURNAL</span>
+      <h2>看得见的成长轨迹</h2>
+      <p>每周自动生成图文手账，关键瞬间配文留念，人工确认后归档。</p>
+    </div>
+    <div class="timeline" id="timelineList">
+      <!-- 由 app.js 注入 -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== 技术栈 ===== -->
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">BUILT WITH</span>
+      <h2>成熟的组件，务实的架构</h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card"><b>InsightFace</b><span>本地人脸检测与 512 维特征提取</span></div>
+      <div class="tech-card"><b>OpenCV / FFmpeg</b><span>抽帧、切片与视频合成</span></div>
+      <div class="tech-card"><b>LangGraph</b><span>周报工作流 + 人工审核中断</span></div>
+      <div class="tech-card"><b>FastAPI · SQLite</b><span>轻量服务与任务状态</span></div>
+      <div class="tech-card"><b>本地存储</b><span>MD5 去重，数据不出设备</span></div>
+      <div class="tech-card"><b>Apple Silicon</b><span>适配 M 系列，统一内存推理</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 隐私 CTA ===== -->
+<section id="privacy" class="section">
+  <div class="wrap">
+    <div class="privacy-card">
+      <div class="privacy-ico">🛡️</div>
+      <h2>孩子的脸，只留在你自己的电脑里</h2>
+      <p>人脸是敏感的生物识别信息，儿童更是。KidLens 默认全程本地处理，不上传、不外传；确需云端多模态能力时，也可以只发送裁剪后的场景帧。</p>
+      <a class="btn btn-light" href="review.html">去看看审核流程 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>KidLens AI · 个人展示项目</span>
+    <span>Made with care, for every little moment.</span>
+  </div>
+</footer>
+
+<script src="js/app.js?v=20261121c"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>建立孩子档案 · KidLens AI</title>
+<link rel="stylesheet" href="css/style.css?v=20261121c">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="20" rx="6" fill="currentColor" opacity=".15"/><path d="M11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/></svg>
+      </span>
+      <span>KidLens <b>AI</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="gallery.html">相册</a>
+      <a href="import.html">导入素材</a>
+      <a href="enroll.html" class="current">建立档案</a>
+      <a href="users.html">账号管理</a>
+    </nav>
+    <div class="nav-user" id="navUser"></div>
+  </div>
+</header>
+
+<main class="wrap app-main">
+  <div class="back-link"><a href="gallery.html">← 返回相册</a></div>
+  <div class="sec-head app-head">
+    <span class="kicker">ENROLL</span>
+    <h2>给孩子建立档案</h2>
+    <p>上传 1~5 张清晰正面照，系统提取人脸特征。之后导入素材就能自动认出这个孩子。</p>
+  </div>
+
+  <div class="enroll-grid">
+    <section class="panel">
+      <div class="panel-title">1 · 孩子信息</div>
+      <div class="panel-body">
+        <label class="field-label" for="childName">名字（会成为文件夹名）</label>
+        <input type="text" id="childName" class="text-input" placeholder="例如：小宝">
+        <label class="field-label" for="childNick">昵称（可选）</label>
+        <input type="text" id="childNick" class="text-input" placeholder="例如：宝宝">
+        <p class="hint">名字用于归档文件夹和家长绑定，请和平时称呼保持一致。</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">2 · 基准照</div>
+      <div class="panel-body">
+        <div class="dropzone" id="enrollDropzone">
+          <div class="drop-ico">👤</div>
+          <b>把正面照拖到这里</b>
+          <small>或点击选择 · 建议 1~5 张 · 脸要够大够清晰</small>
+          <input type="file" id="enrollInput" multiple accept="image/*" hidden>
+        </div>
+        <div class="file-list" id="enrollFileList"></div>
+        <button class="btn" id="enrollBtn" disabled>建立档案 <span aria-hidden="true">→</span></button>
+        <div class="progress-wrap" id="enrollProgress" hidden>
+          <span id="enrollProgressText" class="hint">正在提取人脸特征，请稍候…</span>
+        </div>
+        <div id="enrollResult" class="result-summary" hidden></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="panel-title">已建档的孩子</div>
+    <div class="panel-body">
+      <div id="enrolledList" class="pending-list"></div>
+    </div>
+  </section>
+</main>
+
+<script src="js/app.js?v=20261121c"></script>
+</body>
+</html>

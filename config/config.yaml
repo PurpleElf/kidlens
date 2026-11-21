@@ -1,0 +1,22 @@
+# KidLens 可调参数
+# 改完重跑 CLI 即生效（无需重启服务）。以下值是"展示项目"的推荐起点，
+# 请用你自己的素材实测后再微调；阈值尤其要实测，别照搬 PRD 里的 0.45~0.60。
+
+# ===== 人脸比对 =====
+face:
+  # 余弦相似度：>= high 直接确认同人；low <= sim < high 进待确认池；< low 视为陌生人
+  # InsightFace/ArcFace 通常 ~0.3 就能判同人，过高会把真实抓拍误丢进待确认池
+  threshold_high: 0.40
+  threshold_low: 0.25
+  sample_step_seconds: 2.0   # 抽帧步长（秒），越小越准但越慢
+  merge_gap_seconds: 4.0     # 相邻命中间隔小于此值则合并为同一段
+
+# ===== 剪辑 =====
+clip:
+  padding_seconds: 2.0       # 每个片段前后各扩边的秒数
+  min_duration_seconds: 3.0  # 短于此长度的片段丢弃
+
+# ===== VLM（Phase 3 预留，当前 Phase 1 CLI 未使用）=====
+vlm:
+  provider: cloud            # cloud | local
+  weekly_frame_limit: 12     # 周报最多送多少帧给 VLM

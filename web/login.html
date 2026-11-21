@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录 · KidLens AI</title>
+<link rel="stylesheet" href="css/style.css?v=20261121c">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="20" rx="6" fill="currentColor" opacity=".15"/><path d="M11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/></svg>
+      </span>
+      <span>KidLens <b>AI</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="gallery.html">相册</a>
+      <a href="index.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap auth-main">
+  <div class="auth-card">
+    <div class="auth-head">
+      <span class="kicker">SIGN IN</span>
+      <h2>选择你的身份</h2>
+      <p>教师上传整理班级素材；家长查看自己孩子的相册。</p>
+    </div>
+
+    <div id="authError" class="auth-error" hidden></div>
+
+    <form id="loginForm" class="auth-form">
+      <label class="field-label" for="username">账号</label>
+      <input type="text" id="username" class="text-input" autocomplete="username" placeholder="teacher 或家长账号">
+
+      <label class="field-label" for="password">密码</label>
+      <input type="password" id="password" class="text-input" autocomplete="current-password" placeholder="密码">
+
+      <button type="submit" class="btn auth-submit">登录 <span aria-hidden="true">→</span></button>
+    </form>
+
+    <div class="auth-demo">
+      <b>本机演示账号</b>
+      <div class="demo-row" id="demoTeacher"><span class="role-tag teacher">教师</span><code>teacher</code> / <code>admin123</code><button type="button" class="btn btn-mini btn-ghost use-account" data-u="teacher" data-p="admin123">填入</button></div>
+      <div class="demo-row" id="demoParent"><span class="role-tag parent">家长</span><code>parent</code> / <code>123456</code><button type="button" class="btn btn-mini btn-ghost use-account" data-u="parent" data-p="123456">填入</button></div>
+      <p class="hint">家长账号由教师在「账号管理」里创建，可绑定特定孩子。</p>
+    </div>
+  </div>
+</main>
+
+<script src="js/app.js?v=20261121c"></script>
+</body>
+</html>

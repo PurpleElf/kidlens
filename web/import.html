@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>导入素材 · KidLens AI</title>
+<link rel="stylesheet" href="css/style.css?v=20261121c">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="20" rx="6" fill="currentColor" opacity=".15"/><path d="M11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/></svg>
+      </span>
+      <span>KidLens <b>AI</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="gallery.html">相册</a>
+      <a href="import.html" class="current">导入素材</a>
+      <a href="review.html">审核台</a>
+    </nav>
+    <div class="nav-user" id="navUser"></div>
+  </div>
+</header>
+
+<main class="wrap app-main">
+  <div class="back-link"><a href="gallery.html">← 返回相册</a></div>
+  <div class="sec-head app-head">
+    <span class="kicker">IMPORT</span>
+    <h2>导入班级素材</h2>
+    <p>把照片、视频整批拖进来。AI 会自动认出里面的孩子，按人和日期归档。</p>
+  </div>
+
+  <div class="import-grid">
+    <section class="panel">
+      <div class="panel-title">1 · 选择素材</div>
+      <div class="panel-body">
+        <div class="dropzone" id="dropzone">
+          <div class="drop-ico">📥</div>
+          <b>把照片 / 视频拖到这里</b>
+          <small>或点击选择文件 · 支持多选 · jpg / png / heic / mp4 / mov</small>
+          <input type="file" id="fileInput" multiple accept="image/*,video/*" hidden>
+        </div>
+        <div class="file-list" id="fileList"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">2 · 活动日期</div>
+      <div class="panel-body">
+        <label class="field-label" for="dateInput">这次活动的日期</label>
+        <input type="date" id="dateInput" class="text-input">
+        <p class="hint">留空则自动读照片的拍摄时间（EXIF），读不到就用文件修改时间。之后也能在相册里改。</p>
+        <label class="check-line">
+          <input type="checkbox" id="autoSort" checked>
+          <span>导入后自动人脸识别分拣</span>
+        </label>
+        <p class="hint">关闭则全部进待确认池，稍后手动归类。</p>
+        <button class="btn" id="importBtn" disabled>开始导入 <span aria-hidden="true">→</span></button>
+        <div class="progress-wrap" id="progressWrap" hidden>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <span id="progressText" class="hint">处理中…</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel" id="resultPanel" hidden>
+    <div class="panel-title">3 · 导入结果</div>
+    <div class="panel-body">
+      <div id="resultSummary" class="result-summary"></div>
+      <div id="resultList" class="result-list"></div>
+      <div class="result-actions">
+        <a class="btn" href="gallery.html">去相册看看 <span aria-hidden="true">→</span></a>
+        <button class="btn btn-ghost" id="pendingBtn" hidden>处理待确认素材</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="pendingPanel" hidden>
+    <div class="panel-title">待确认素材</div>
+    <div class="panel-body">
+      <p class="hint">这些素材没认出孩子。点选一个孩子归入，或新建档案；照片会顺带学进人脸库，下次更准。</p>
+      <div id="pendingList" class="pending-list"></div>
+    </div>
+  </section>
+</main>
+
+<script src="js/app.js?v=20261121c"></script>
+</body>
+</html>

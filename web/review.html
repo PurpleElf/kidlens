@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KidLens AI · 审核台</title>
+<link rel="stylesheet" href="css/style.css?v=20261121c">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="20" rx="6" fill="currentColor" opacity=".15"/><path d="M11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/></svg>
+      </span>
+      <span>KidLens <b>AI</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html#how">如何工作</a>
+      <a href="index.html#showcase">作品展示</a>
+      <a href="index.html#timeline">成长手账</a>
+    </nav>
+    <div class="nav-user" id="navUser"></div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:48px">
+  <div class="wrap">
+    <div class="review-head">
+      <div>
+        <span class="kicker">REVIEW DESK</span>
+        <h1 style="font-size:clamp(28px,3.4vw,40px);letter-spacing:-1px;margin:10px 0 4px">人工审核台</h1>
+        <p style="color:var(--ink-soft);margin:0">AI 生成周报草稿，由你把关最后一道——改文案、剔除配图，确认通过。</p>
+      </div>
+      <span class="status status-pending" id="pendingCount">待审核 1 份</span>
+    </div>
+
+    <div class="review-grid">
+      <!-- 左侧：人物列表 -->
+      <aside class="panel">
+        <div class="panel-title">人物档案 <span class="hint" id="personCount"></span></div>
+        <div class="panel-body" id="personList">
+          <!-- 由 app.js 注入 -->
+        </div>
+      </aside>
+
+      <!-- 右侧：周报草稿 -->
+      <main>
+        <div class="panel">
+          <div class="panel-title">周报草稿</div>
+          <div class="panel-body" id="draftList">
+            <!-- 由 app.js 注入 -->
+          </div>
+        </div>
+        <p class="hint" style="margin-top:14px">💡 提示：审核通过后会调用后端接口归档；后端未启动时，操作仅在当前页面生效（演示模式）。</p>
+      </main>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>KidLens AI · 人工审核闭环</span>
+    <span>Human-in-the-loop，让 AI 的误差止步于此。</span>
+  </div>
+</footer>
+
+<script src="js/app.js?v=20261121c"></script>
+</body>
+</html>

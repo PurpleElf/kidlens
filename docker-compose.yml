@@ -1,0 +1,11 @@
+# 本项目（展示版）走本地存储路径，不需要 Docker，也不需要 MinIO。
+# 此文件仅作占位说明，可安全忽略或删除。
+#
+# 说明：
+# - 存储实现见 src/core/storage.py（LocalStorage，基于 data/ 目录）
+# - 原始数据放 data/inbox/，去重归档到 data/archive/，产物在 data/output/
+#
+# 若将来确实要上 MinIO 并展示 S3 兼容存储，注意：
+# - 官方 minio/minio 镜像已于 2025-10 下架，docker pull 会失败
+# - 可用替代镜像：cgr.dev/chainguard/minio 或 pgsty/minio（维护中的 fork）
+# - 或 macOS 原生装：brew install minio/stable/minio（锁定旧版，无维护）

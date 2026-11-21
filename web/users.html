@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>账号管理 · KidLens AI</title>
+<link rel="stylesheet" href="css/style.css?v=20261121c">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="20" rx="6" fill="currentColor" opacity=".15"/><path d="M11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0Z" fill="currentColor"/><circle cx="16" cy="12" r="2.2" fill="currentColor"/></svg>
+      </span>
+      <span>KidLens <b>AI</b></span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="gallery.html">相册</a>
+      <a href="import.html">导入素材</a>
+      <a href="enroll.html">建立档案</a>
+      <a href="users.html" class="current">账号管理</a>
+    </nav>
+    <div class="nav-user" id="navUser"></div>
+  </div>
+</header>
+
+<main class="wrap app-main">
+  <div class="back-link"><a href="gallery.html">← 返回相册</a></div>
+  <div class="sec-head app-head">
+    <span class="kicker">ACCOUNTS</span>
+    <h2>家长账号管理</h2>
+    <p>给每位家长建账号并绑定孩子，家长登录后只能看到这些孩子的相册。</p>
+  </div>
+
+  <div class="enroll-grid">
+    <section class="panel">
+      <div class="panel-title">新建家长账号</div>
+      <div class="panel-body">
+        <label class="field-label" for="newUsername">登录账号</label>
+        <input type="text" id="newUsername" class="text-input" placeholder="例如：xiaobao_mama">
+        <label class="field-label" for="newPassword">密码</label>
+        <input type="text" id="newPassword" class="text-input" placeholder="给家长初始密码">
+        <label class="field-label" for="newName">显示名称（可选）</label>
+        <input type="text" id="newName" class="text-input" placeholder="例如：小宝妈妈">
+        <label class="field-label">可见的孩子</label>
+        <div id="childChoices" class="child-choices"><p class="hint">加载中…</p></div>
+        <button class="btn" id="addParentBtn" disabled>创建家长账号 <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">已有家长</div>
+      <div class="panel-body">
+        <div id="parentList" class="pending-list"><p class="hint">加载中…</p></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script src="js/app.js?v=20261121c"></script>
+</body>
+</html>

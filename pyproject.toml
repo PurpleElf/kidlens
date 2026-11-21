@@ -1,0 +1,9 @@
+[project]
+name = "kidlens-ai"
+version = "0.1.0"
+description = "智能影像分拣与成长手账助手 - 个人展示版"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
